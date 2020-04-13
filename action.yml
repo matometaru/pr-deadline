@@ -1,0 +1,18 @@
+name: 'pr-deadline'
+description: 'Specify the deadline of the pull request and close it automatically.'
+inputs:
+  token:
+    description: 'GitHub Token(scope: repo)'
+    required: true
+  expirationDate:
+    description: 'Expiration date'
+    required: false
+    defalut: 7
+outputs:
+  closedPulls:
+    description: 'Pulls format json.'
+  message:
+    description: 'Closed pulls text.'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
